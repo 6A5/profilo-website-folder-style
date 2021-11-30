@@ -18,27 +18,33 @@
     <h1>LINE貼圖</h1>
   </div>
 
-  <div class="project-card">
-    <div class="project-image-slider-container">
-  
+  <div class="draw-card">
+    <div class="draw-image-slider-container">
+      <img src="image/draw/hen2.png" alt="這是一張畫面截圖" class="gallery-img">
     </div>
-  
-    <div class="project-description">
-      <h2>Cuby</h2>
-      <p>這是一款橫向2D的過關遊戲，透過在手機裝置上的特性，利用減法將操作設計成透過左右搖晃來操控角色並且結合超級瑪莉的部分玩法形成新遊戲；美術的部分則是參考MirrorEdge利用顏色的區分讓玩家熟悉。</p>
-      <p>這款也是我個人製作中，完整的將設計、程式、美術部分全包的個人作品。</p>
+    <div class="draw-title">
+      <h2>Hen - 雞</h2>
     </div>
   </div>
 
-  <div class="project-card">
-    <div class="project-image-slider-container">
-  
+  <div class="draw-card">
+    <div class="draw-image-slider-container">
+      <img src="image/draw/baba2.png" alt="這是一張畫面截圖" class="gallery-img">
     </div>
+    <div class="draw-title">
+      <h2>BABA - 2bits像素貼圖</h2>
+    </div>
+  </div>
 
-    <div class="project-description">
-      <h2>PassTheTorch</h2>
-      <p>這是一款小品的反應遊戲，利用點擊操作出手時機以及透過技能來傳遞火把；美術的部分則是參考希臘風格結合運動會傳遞聖火。</p>
-      <p>我在這款遊戲中擔任主企劃跟遊戲程式。</p>
+  <div class="draw-card">
+    <div class="draw-image-slider-container">
+      <img src="image/draw/abi2.png" alt="這是一張畫面截圖" class="gallery-img slides1">
+      <img src="image/draw/abi3.png" alt="這是一張畫面截圖" class="gallery-img slides1">
+      <button class="btn-slide slide-left" onclick="plusDivs(-1, 0)">&#10094;</button>
+      <button class="btn-slide slide-right" onclick="plusDivs(1, 0)">&#10095;</button>
+    </div>
+    <div class="draw-title">
+      <h2>桌子旁的阿比</h2>
     </div>
   </div>
 
@@ -46,28 +52,21 @@
     <h1>其餘作品</h1>
   </div>
   
-  <div class="project-card">
-    <div class="project-image-slider-container">
-  
+  <div class="draw-card">
+    <div class="draw-image-slider-container">
+      <img src="image/draw/TSD.png" alt="這是一張畫面截圖" class="gallery-img">
     </div>
-  
-    <div class="project-description">
-      <h2>RETOPIA</h2>
-      <p>結合日系電音與日系插畫的傳統6K落下式音樂遊戲，透過重複遊玩多首歌曲來了解更多關於本遊戲主題「RETOPIA」城市的面貌。</p>
-      <p>我在這款遊戲中擔任主程式，主要負責處裡遊戲資料的傳遞以及遊戲機制。</p>
+    <div class="draw-title">
+      <h2>第二場夢(校內參賽)</h2>
     </div>
   </div>
 
-  <div class="project-card">
-    <div class="project-image-slider-container">
-  
+  <div class="draw-card">
+    <div class="draw-image-slider-container">
+      <img src="image/draw/other1.jpg" alt="這是一張畫面截圖" class="gallery-img">
     </div>
-  
-    <div class="project-description">
-      <h2>prj.Adventure</h2>
-      <p>全名《So what’s your professi-on? I’m an adventurer.》是一款2D橫向動作遊戲。
-        <br>內容講述一個剛當上冒險者的新人，在第一次得出任務中就遭遇許許多多事情，並且遇到這生中最強大的敵人。</p>
-        <p>我在這款遊戲中擔任怪物AI的製作。</p>
+    <div class="draw-title">
+      <h2>竹篙鬼設計(妖怪設計比賽)</h2>
     </div>
   </div>
 
@@ -183,5 +182,32 @@
     </div>
     <div class="nav-inset-shadow"></div>
   </div>
+
+  <script>
+    var slideIndex = [1,1]; // 建立索引
+    var slideId = ["slides1","slides2"]
+    reset(slideId);
+    function reset(x) {
+      var i;
+      for (i = 0; i < x.length; i++) {
+        showDivs(1,i);
+      }
+    }
+
+    function plusDivs(n, no) { // 按鈕功能 加減索引數
+      showDivs(slideIndex[no] += n, no);
+    }
+
+    function showDivs(n, no) {
+      var i; // 陣列 用來隱藏所有圖片
+      var x = document.getElementsByClassName(slideId[no]); // 取得所有mySlides
+      if (n > x.length) {slideIndex[no] = 1}; // 避免超過索引數
+      if (n < 1) {slideIndex[no] = x.length}; // 避免小於1
+      for (i = 0; i < x.length; i++) { // 隱藏圖片
+        x[i].style.display = "none";
+      }
+      x[slideIndex[no] - 1].style.display = "block"; // 顯示索引數圖片
+    }
+  </script>
 </body>
 </html>

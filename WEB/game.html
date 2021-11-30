@@ -20,7 +20,11 @@
 
   <div class="project-card">
     <div class="project-image-slider-container">
-  
+      <img src="image/game/cuby1.webp" alt="這是一張畫面截圖" class="gallery-img slides1">
+      <img src="image/game/cuby2.webp" alt="這是一張畫面截圖" class="gallery-img slides1">
+      <img src="image/game/cuby3.webp" alt="這是一張畫面截圖" class="gallery-img slides1">
+      <button class="btn-slide slide-left" onclick="plusDivs(-1, 0)">&#10094;</button>
+      <button class="btn-slide slide-right" onclick="plusDivs(1, 0)">&#10095;</button>
     </div>
   
     <div class="project-description">
@@ -32,7 +36,12 @@
 
   <div class="project-card">
     <div class="project-image-slider-container">
-  
+      <img src="image/game/ptt1.webp" alt="這是一張畫面截圖" class="gallery-img slides2">
+      <img src="image/game/ptt2.webp" alt="這是一張畫面截圖" class="gallery-img slides2">
+      <img src="image/game/ptt3.webp" alt="這是一張畫面截圖" class="gallery-img slides2">
+      <img src="image/game/ptt4.webp" alt="這是一張畫面截圖" class="gallery-img slides2">
+      <button class="btn-slide slide-left" onclick="plusDivs(-1, 1)">&#10094;</button>
+      <button class="btn-slide slide-right" onclick="plusDivs(1, 1)">&#10095;</button>
     </div>
 
     <div class="project-description">
@@ -48,7 +57,10 @@
   
   <div class="project-card">
     <div class="project-image-slider-container">
-  
+      <img src="image/game/music1.jpg" alt="這是一張畫面截圖" class="gallery-img slides3">
+      <img src="image/game/music2.jpg" alt="這是一張畫面截圖" class="gallery-img slides3">
+      <button class="btn-slide slide-left" onclick="plusDivs(-1, 2)">&#10094;</button>
+      <button class="btn-slide slide-right" onclick="plusDivs(1, 2)">&#10095;</button>
     </div>
   
     <div class="project-description">
@@ -60,7 +72,12 @@
 
   <div class="project-card">
     <div class="project-image-slider-container">
-  
+      <img src="image/game/ad1.png" alt="這是一張畫面截圖" class="gallery-img slides4">
+      <img src="image/game/ad2.png" alt="這是一張畫面截圖" class="gallery-img slides4">
+      <img src="image/game/ad3.png" alt="這是一張畫面截圖" class="gallery-img slides4">
+      <img src="image/game/ad4.png" alt="這是一張畫面截圖" class="gallery-img slides4">
+      <button class="btn-slide slide-left" onclick="plusDivs(-1, 3)">&#10094;</button>
+      <button class="btn-slide slide-right" onclick="plusDivs(1, 3)">&#10095;</button>
     </div>
   
     <div class="project-description">
@@ -183,5 +200,32 @@
     </div>
     <div class="nav-inset-shadow"></div>
   </div>
+
+  <script>
+    var slideIndex = [1,1,1,1]; // 建立索引
+    var slideId = ["slides1","slides2","slides3","slides4"]
+    reset(slideId);
+    function reset(x) {
+      var i;
+      for (i = 0; i < x.length; i++) {
+        showDivs(1,i);
+      }
+    }
+
+    function plusDivs(n, no) { // 按鈕功能 加減索引數
+      showDivs(slideIndex[no] += n, no);
+    }
+
+    function showDivs(n, no) {
+      var i; // 陣列 用來隱藏所有圖片
+      var x = document.getElementsByClassName(slideId[no]); // 取得所有mySlides
+      if (n > x.length) {slideIndex[no] = 1}; // 避免超過索引數
+      if (n < 1) {slideIndex[no] = x.length}; // 避免小於1
+      for (i = 0; i < x.length; i++) { // 隱藏圖片
+        x[i].style.display = "none";
+      }
+      x[slideIndex[no] - 1].style.display = "block"; // 顯示索引數圖片
+    }
+  </script>
 </body>
 </html>
