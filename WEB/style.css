@@ -128,12 +128,47 @@ h1, h2, h3, h4, h5, h6{
   margin: 18px 0px;
 }
 
+.contact-content {
+  min-height: 90vh;
+  margin-bottom: -3vh;
+  position: relative;
+}
+.contact-container {
+  height: 60vh;
+  position: absolute;
+  top: -2vh;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.contact-banner {
+  width: 90%;
+  padding: 5vh 10vw;
+  color: #fff;
+  height: 20vh;
+}
+.contact-banner p{
+  text-align: right;
+}
+.contact-dc {
+  background-color: #7289DA;
+}
+.contact-fb {
+  background-color: #1778F2; 
+}
+.contact-em {
+  background-color: #DB4437; 
+}
+
 .footer {
   max-width: 90%;
+  height: 3vh;
   display: block;
   background-color: blanchedalmond;
   text-align: center;
   padding: 0 0 0 0;
+  bottom: 0;
 }
 .footer p{
   font-size: small;
